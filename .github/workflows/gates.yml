@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - id: g
-        uses: andrewlau624/ratchet-gates@v1
-      - if: always()
-        run: 'echo "action output result=${{ steps.g.outputs.result }}"'
+      - uses: andrewlau624/ratchet-gates@v1
+        with:
+          advisory: "true"
