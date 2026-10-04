@@ -1,0 +1,4 @@
+# Vendored code is copied in from upstream; we do not get to restructure it.
+[[override]]
+paths = ["vendored/**"]
+ruff  = { remove = ["PLC0415"] }
